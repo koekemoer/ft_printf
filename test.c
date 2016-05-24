@@ -6,7 +6,7 @@
 /*   By: lkoekemo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/23 11:19:38 by lkoekemo          #+#    #+#             */
-/*   Updated: 2016/05/23 16:19:29 by lkoekemo         ###   ########.fr       */
+/*   Updated: 2016/05/24 13:59:50 by lkoekemo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,11 @@ int		main()
 	//CHAR	
 	printf("printf___ | char_1: %c |\n", test_c1);
 	ft_printf("ft_printf | char_1: %c |\n\n", test_c1);
-	printf("printf___ | char_1: %c | char_2: %c |\n", test_c1, test_c2);
-	ft_printf("ft_printf | char_1: %c | char_2: %c |\n\n", test_c1, test_c2);
+	printf("printf___ | char_1: %c | char_2: %c |\n", test_c1, test_c2);	
+	ft_printf("ft_printf | char_1: %c | char_2: %c |\n\n", test_c1, test_c2);	
+
+	printf("printf___ | char_1: %c | char_2: %c |\n", 146, 200);
+	ft_printf("ft_printf | char_1: %c | char_2: %c |\n\n", 146, 200);
 
 	//STRING
 	printf("printf___ | char_1: %s |\n", test_str);
@@ -56,6 +59,14 @@ int		main()
 
 	printf("printf___ | neg unsigned int_1: %u |\n", -654);
 	ft_printf("ft_printf | neg unsigned int_1: %u |\n\n", -654);
+
+	//OCTAL REPRESENTATION
+	printf("printf___ | octal: %o |\n", 104);
+	ft_printf("ft_printf | octal: %o |\n\n", 104);
+
+	//HEX REPRESENTATION
+	printf("printf___ | hex: %x |\n", 60);	// 'x' is klein letters. 'X' is capitals.
+	ft_printf("ft_printf | hex: %x |\n\n", 60);
 
 	printf("TEST %%\n\n");
 

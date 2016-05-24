@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_convert.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkoekemo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/23 11:20:47 by lkoekemo          #+#    #+#             */
-/*   Updated: 2016/05/24 12:49:14 by lkoekemo         ###   ########.fr       */
+/*   Created: 2016/05/24 12:39:20 by lkoekemo          #+#    #+#             */
+/*   Updated: 2016/05/24 12:48:40 by lkoekemo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#include "libftprintf.h"
 
-# include <stdarg.h>
-# include <unistd.h>
-# include <stdlib.h>
+char	*ft_convert(unsigned int num, int base)
+{
+	static char	*rep;
+	static char	buffer[50];
+	char		*ptr;
 
-# define UINT_MAX	 4924967295U
-
-int		ft_printf(const char *fmt, ...);
-void	ft_putchar(const char c);
-void	ft_putnbr(int n);
-void	ft_putstr(const char *s);
-char	*ft_convert(unsigned int num, int base);
-
-#endif
+	rep = "0123456789ABCDEF";
+	ptr = &buffer[49];
+	*ptr = '\0';
+	while (num != 0)
+	{
+		*--ptr = rep[num%base];
+		num /= base;
+	}
+	return (ptr);
+}
